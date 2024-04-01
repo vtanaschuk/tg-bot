@@ -220,7 +220,7 @@ cron.schedule("*/15 * * * *", async () => {
         } else {
           bot.sendMessage(
             product.chatId,
-            `Дані оновлено для товару: ${product.title}. Нова ціна: ${productData.price}, Стара ціна: ${product.price}`
+            `Дані оновлено для товару: ${product.title}. Нова ціна: ${productData.price}, Стара ціна: ${product.price}.`
           );
           await Product.updateOne({ _id: product._id }, { $set: productData });
         }
